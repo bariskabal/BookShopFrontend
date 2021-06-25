@@ -1,0 +1,109 @@
+<app-navbar></app-navbar>
+
+<section id="cartDetail" *ngIf="cartItems?.length<=0" style="padding-top: 4rem;padding-bottom: 4rem;">
+  <div  class="container mt-5">
+      <div class="row justify-content-center">
+          <div class="col-12 col-sm-8 mr-auto">
+              <div class="row d-flex align-items-center">
+                  <div class="col-12 col-sm-4 d-flex justify-content-center w-25" >
+                    <div class="card" style="width: 180px;">
+                      <div class="card-body" style="height: 110px;overflow-y: auto;border: 1px solid #e6e6e6;">
+                        <div class="d-flex justify-content-center w-100 mt-4">
+                          <i class="fas fa-shopping-cart fa-lg"></i>
+                          <span>0</span>
+                        </div>
+                        
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-12 col-sm-8 ">
+                      <div class="card" style="width: 700px;">
+                          <div class="card-body d-flex align-items-center" style="height: 110px;overflow-y: auto;">
+                            <div class="d-flex justify-content-start w-75">
+                              <h5 class="text-monospace">Sepetinizde ürün bulunmamaktadır.</h5>
+                            </div>
+                            <div class="d-flex justify-content-end w-25">
+                              
+                              <a routerLink="" class="nav-link btn text-monospace" style="background-color: #fed136; color: black;">Alışverişe Başla</a>
+                            </div>
+                          
+                          
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>    
+<section id="cartDetail" *ngIf="cartItems?.length>0" style="padding-top: 8rem;padding-bottom: 4rem;">
+  <div  class="container">
+    <div  class="row">
+      <div  class="col-12 col-sm-8">
+        <div *ngFor="let item of cartItems" class="row align-items-center border-3" style="margin-bottom: 1rem;">
+          <div class="col-4 col-sm-2">
+            <div class="rK3dleh2JA">
+              <div class="jC2OLUOoP1">
+                <app-book-image [id]="item.book.id"></app-book-image>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-sm-10">
+            <div class="row align-items-center">
+              <div class="col-12 col-sm-6">
+                <h5 class="mb-0 text-monospace">{{item.book.bookName}}</h5>
+              </div>
+              <div class="col-9 col-sm-3">
+                <div style="margin-top: 1rem;margin-bottom: 1rem;">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button *ngIf="item.quantity<=1" class="btn btn-outline-dark btn-sm"  type="button">-</button>
+                      <button *ngIf="item.quantity>1" (click)="deleteItem(item)" class="btn btn-outline-dark btn-sm" type="button">-</button>
+                    </div>
+                    <div  class="form-control form-control-sm xrBK8FN3Sd text-center text-monospace">{{item.quantity}}</div>
+                    <div class="input-group-append">
+                      <button (click)="addQty(item)"  class="btn btn-outline-dark btn-sm" type="button">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-sm-1">
+                <div class="text-center">
+                  <a class="text-danger" >
+                    <i (click)="deleteItem(item)" class="fas fa-trash"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="card" style="width: 100%;margin-bottom: 1rem;">
+          <h5 class="card-header bg-transparent text-monospace">SEPET ÖZETİ</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0 bg-transparent">
+              <span class="text-monospace font-weight-light">ÜRÜN TOPLAMI </span>&nbsp;<span class="text-black">{{totalPrice}} ₺</span>
+            </li>
+            <li class="list-group-item border-0 bg-transparent">
+              <span class="text-monospace font-weight-light" >KARGO ÜCRETİ </span >&nbsp;<span class="text-black">10 ₺</span>
+            </li>
+            <li class="list-group-item border-0 bg-transparent">
+              <span class="text-muted font-weight-light"></span>&nbsp;<span class="text-black">{{totalPrices}}₺</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <a routerLink="/checkout" class="btn btn-outline-dark btn-block btn-lg text-monospace"  style="background-color: white; color: black;">SİPARİŞİ TAMAMLA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<app-book-newests></app-book-newests>
+
+  
+
+<app-footer></app-footer>

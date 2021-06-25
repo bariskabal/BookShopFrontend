@@ -1,0 +1,26 @@
+.rK3dleh2JA {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 125%;
+}
+
+.jC2OLUOoP1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+
+.jC2OLUOoP1 img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media only screen and (max-width: 991px) {
+	.Lahx9mc4hL {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	}
+}

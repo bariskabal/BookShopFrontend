@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+  <section id="book" style="padding-top: 4rem;padding-bottom: 4rem;">
+    <div class="container">
+      <div class="row">
+        <app-book-filter></app-book-filter>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 ">
+          <div  class="row mt-5">
+            <div class="col-12">
+              <div *ngIf="textFilter!=''" style="margin-bottom: 4rem;">
+                <h3  class="mb-0 text-monospace" style="margin-bottom:2rem;">"{{textFilter}}" ile ilgili {{books?.length}} sonuç bulundu.</h3> 
+              </div>
+              <div *ngIf="textFilter==''" style="margin-bottom: 4rem;">
+                <h3  class="mb-0 text-monospace" style="margin-bottom:2rem;">{{books?.length}} sonuç bulundu.</h3> 
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let book of books" class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div  class="card border-1 rounded-1" style="width: 100%;margin-bottom: 1rem;">
+                <app-book-image [id]="book.id"></app-book-image>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a routerLink="/bookdetail/{{book.id}}" class="text-reset stretched-link text-monospace">{{book.bookName}}</a>
+                  </h5>
+                  <p class="card-text text-monospace">{{book.releaseDate}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <app-footer></app-footer>

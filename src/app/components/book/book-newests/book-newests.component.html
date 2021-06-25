@@ -1,0 +1,31 @@
+<section style="padding-top: 4rem;padding-bottom: 4rem;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div style="margin-bottom: 1rem;">
+          <div class="d-flex align-items-center">
+            <div class="d-flex justify-content-start" style="width: 75%;">
+              <h3 class="mb-0 text-monospace">En Yeniler</h3>
+            </div>
+            <div class="d-flex justify-content-end" style="width: 25%;">
+              <a routerLink="/books" class="text-muted text-decoration-none text-monospace">Tümünü Görüntüle</a>
+            </div>
+          </div>
+        </div>
+        <div class="row Lahx9mc4hL">
+          <div *ngFor="let book of books" class="col-9 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div class="card rounded-0" style="width: 100%;margin-bottom: 1rem;">
+              <app-book-image [id]="book.id"></app-book-image>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a routerLink="bookdetail/{{book.id}}" class="text-reset stretched-link text-monospace">{{book.bookName}}</a>
+                </h5>
+                <p class="card-text text-monospace">{{book.releaseDate}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

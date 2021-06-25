@@ -1,0 +1,61 @@
+
+
+
+<form>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <select class="form-control text-monospace" aria-placeholder="Kategoriler" [(ngModel)]="categoryIdFilter" [ngModelOptions]="{standalone: true}">
+            <option selected>Kategoriler</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.categoryName}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group">
+          <select class="form-control text-monospace"  [(ngModel)]="authorIdFilter" [ngModelOptions]="{standalone: true}">
+            <option selected>Yazarlar</option>
+            <option *ngFor="let author of authors" [value]="author.id">{{author.authorName}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <div class="form-group">
+          <a
+            routerLink="./"
+            [queryParams]="{categoryId:categoryIdFilter,authorId:authorIdFilter }"
+            type="button"
+            class=""
+          >
+          <i class="fas fa-filter mt-2" style="color: black;"></i>
+        </a>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <div class="form-group">
+          <a
+           routerLink="/books"
+            type="button"
+            class=""
+          >
+          <i class="far fa-trash-alt mt-2" style="color: black;"></i>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+</form>
+
+
+
+
+
+
+
+
+
+

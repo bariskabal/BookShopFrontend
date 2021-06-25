@@ -1,0 +1,50 @@
+.y1SFajIn5T {
+	background-color: rgba(0, 0, 0, .02);
+}
+
+#cover {
+	height: 100%;
+	font-family: "Montserrat", sans-serif;
+}
+
+#cover{
+	background:url(background.jpg) no-repeat center ;
+	height: 479px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+.header-first-title{
+	margin-top: 10%;
+	color: #fff;
+	font-family: "Droid Serif", serif;
+	font-size: 40px;
+	font-style: italic;
+	line-height: 40px;
+	margin-bottom: 30px;
+}
+.header-second-title{
+	color: #fff;
+	font-size: 75px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+.header-btn{
+	background-color: #fed136;
+	border-style: none;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding:20px 40px;
+}
+.btn1 {
+	background-color: #fed136;
+	border-style: none;
+	text-transform: uppercase;
+	font-size:18px;
+	padding: 20px 40px;
+}
+.btn1:hover {
+	background-color: #fff;
+	color: #fed136 !important;
+}

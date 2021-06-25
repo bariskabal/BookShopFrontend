@@ -1,0 +1,31 @@
+
+
+<app-navbar></app-navbar>
+<div id="userInfos">
+  <div class="container">
+      <div id="userInfos-row" class="row justify-content-center align-items-center">
+          <div id="userInfos-column"  class="col-md-6">
+              <div id="userInfos-box" class="col-md-12">
+                  <form [formGroup]="userInfosUpdateForm" id="userInfos-form">
+                      <h3 class="text-center text-dark text-monospace" >Update User Information</h3>
+                      <div class="form-group">
+                        <label for="firstName" class="text-dark text-monospace">FIRST NAME</label><br>
+                        <input class="form-control text-monospace" [ngModel]="user?.firstName" formControlName="firstName" type="firstName" id="firstName" >
+                    </div>
+                    <div class="form-group">
+                      <label for="lastName" class="text-dark text-monospace">LAST NAME</label><br>
+                      <input class="form-control text-monospace" [ngModel]="user?.lastName" formControlName="lastName" type="lastName" id="lastName" >
+                  </div>
+                      <div class="form-group">
+                          <label for="email" class="text-dark text-monospace">EMAIL</label><br>
+                          <input class="form-control text-monospace" [ngModel]="user?.email" formControlName="email" type="email" id="email" >
+                      </div>
+                      <div class="form-group">
+                          <button routerLink="" (click)="updateUserInfos()" type="submit" name="submit" class="w-100 btn btn-dark btn-md text-monospace" style="background-color: #353b48; border-radius: 25px;">Update</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

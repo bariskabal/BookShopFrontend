@@ -1,0 +1,68 @@
+
+  #login .container #login-row #login-column #login-box {
+    margin-top: 300px;
+    max-width: 500px;
+    height: 370px;
+    border: 1px solid #9C9C9C;
+    border-radius: 10px;
+    background-color: #EAEAEA;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+    }
+    #login .container #login-row #login-column #login-box #login-form2 {
+      padding: 20px;
+    }
+    #login .container #login-row #login-column #login-box #login-form2 #register-link {
+      margin-top: -85px;
+      }
+
+    .rK3dleh2JA {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 125%;
+    }
+    
+    .jC2OLUOoP1 {
+      position: center;
+      width: 50%;
+      height: 50%;
+    }
+    .jC2OLUOoP1 .img-circle{
+      margin-left: 160px;
+      border-radius: 176px;
+	    border: 5px solid #f1f1f1;
+    }
+    
+    
+    .jC2OLUOoP1 img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+    
+    @media only screen and (max-width: 200px) {
+      .Lahx9mc4hL {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+    }
+
+    #login {
+      height: 100%;
+      font-family: "Montserrat", sans-serif;
+    }
+    
+    #login{
+      background:url(background.jpg) no-repeat center ;
+      height: 939px;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    }
+    

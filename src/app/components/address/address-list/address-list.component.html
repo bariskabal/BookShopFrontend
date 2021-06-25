@@ -1,0 +1,43 @@
+
+
+  <div class="col-md-12 mt-5">
+
+    <p class="text-monospace" style="font-weight: bold;"> Address List </p>
+    <a routerLink="/addressAdd"><i class="fas fa-plus" style="color: black;"></i></a>
+
+  </div>
+
+  <div class="col-md-12">
+
+    <div class="alert alert-danger text-monospace" *ngIf=" addresses?.length == 0">
+      No credit cart registered.
+    </div>
+
+    <table class="table" *ngIf="addresses?.length > 0">
+      <thead>
+        <tr>
+          <th class="text-monospace"  scope="col">Address Name</th>
+          <th class="text-monospace" scope="col">City</th>
+          <th class="text-monospace" scope="col">Description</th>
+          <th class="text-monospace" scope="col">Gsm</th>
+          <th class="text-monospace" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let address of addresses">
+          <td class="text-monospace">{{address?.addressName}}</td>
+          <td class="text-monospace">{{address?.city}}</td>
+          <td class="text-monospace">{{address?.description}}</td>
+          <td class="text-monospace">{{address?.gsm}}</td>
+          <td  class="text-monospace"><a class="text-danger" (click)="deleteAddress(address)" routerLink="/checkout"><i  class="fas fa-trash"></i></a></td>
+          <td class="form-check">
+            <input (click)="getAddressId(address.id)" class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

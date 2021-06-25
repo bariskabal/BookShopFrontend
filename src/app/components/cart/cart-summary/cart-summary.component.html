@@ -1,0 +1,68 @@
+<div *ngIf="items?.length>0" class=" dropbottom ">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-cart-arrow-down" style="color: white;"></i>Sepetim
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+      <div class="card border-0" style="width: 100%;">
+        <h5 class="card-header bg-transparent"><i class="fas fa-cart-arrow-down" style="color: white;"></i>Sepetim ({{items.length}} Ürün)</h5>
+      </div>
+      <div class="card IILmKtHxFI border-0" style="max-width: 100%;">
+        <div *ngFor="let item of items" class="row no-gutters">
+          <div class="col-4 col-sm-4">
+            <div class="rK3dleh2JA">
+              <div class="jC2OLUOoP1">
+                <app-book-image [id]="item.book.id" ></app-book-image>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-sm-6">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{item.book.unitPrice}} ₺</h6>
+              <div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button *ngIf="item.quantity>1" (click)="deleteItem(item)" class="btn btn-outline-dark btn-sm" type="button">-</button>
+                    <button *ngIf="item.quantity<=1" class="btn btn-outline-dark btn-sm" type="button" disabled>-</button>
+                  </div>
+                  <div class="form-control form-control-sm xrBK8FN3Sd text-center">{{item.quantity}}</div>
+                  <div class="input-group-append">
+                    <button (click)="addQty(item)"  class="btn btn-outline-dark btn-sm" type="button">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card border-0" style="width: 100%;">
+        <div class="card-footer bg-transparent">
+          <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <a routerLink="/sepetim/basket" class="btn btn-outline-dark btn-sm w-50 d-flex justify-content-center align-items-center" >SEPETE GİT</a>
+            <a routerLink="/checkout" class="btn btn-dark btn-sm w-50">SİPARİŞİ TAMAMLA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+
+
+
+
+</div>
+<div *ngIf="items?.length<=0" class="dropdown dropbottom">
+  <li class="nav-item mt-1 dropdown">
+        <a routerLink="/sepetim/basket" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-cart-arrow-down" style="color: white;"></i>Sepetim
+        </a>
+  </li>
+
+</div>
+
+
+
+
+
+
+

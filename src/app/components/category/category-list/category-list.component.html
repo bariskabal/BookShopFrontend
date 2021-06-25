@@ -1,0 +1,29 @@
+<section id="categories" style="padding-top: 4rem;padding-bottom: 4rem;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div style="margin-bottom: 1rem;">
+          <div class="d-flex align-items-center">
+            <div class="d-flex justify-content-start" style="width: 100%;">
+              <h3 class="mb-0 text-monospace">Kategoriler</h3> 
+            </div>
+          </div>
+          <hr style="color: black;">
+        </div>
+        <div  class="row Lahx9mc4hL">
+          <div id="categories" *ngFor="let category of categories" class="col-9 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div id="categories" class="card border-0 rounded-0" style="width: 100%;margin-bottom: 1rem;">
+              <div class="card-body p-0">
+                <h5 class="card-title">
+                  <a class="text-reset stretched-link" 
+                  routerLink="books"
+                  [queryParams]="{categoryId:category.id}">{{category.categoryName}}</a>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

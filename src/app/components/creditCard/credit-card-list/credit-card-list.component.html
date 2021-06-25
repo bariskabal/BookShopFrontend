@@ -1,0 +1,43 @@
+
+
+  <div class="col-md-12 mt-5">
+
+    <p class="text-monospace" style="font-weight: bold;"> Credit Card List </p>
+    <a routerLink="/creditcardAdd"><i class="fas fa-plus" style="color: black;"></i></a>
+
+  </div>
+
+  <div class="col-md-12">
+
+    <div class="alert alert-danger" *ngIf=" creditCards?.length == 0">
+      No credit cart registered.
+    </div>
+
+    <table class="table" *ngIf="creditCards?.length > 0">
+      <thead>
+        <tr>
+          <th class="text-monospace" scope="col">Card Name</th>
+          <th class="text-monospace" scope="col">Card Number</th>
+          <th class="text-monospace" scope="col">Cvv</th>
+          <th class="text-monospace" scope="col">Year</th>
+          <th class="text-monospace" scope="col">Mounth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let creditCard of creditCards">
+          <td class="text-monospace">{{creditCard?.cardName}}</td>
+          <td class="text-monospace">{{creditCard?.cardNumber}}</td>
+          <td class="text-monospace">{{creditCard?.cvv}}</td>
+          <td class="text-monospace">{{creditCard?.year}}</td>
+          <td class="text-monospace">{{creditCard?.mounth}}</td>
+          <td  class="text-monospace"><a class="text-danger" (click)="deleteCreditCard(creditCard)" routerLink="/checkout"><i  class="fas fa-trash"></i></a></td>
+          <td class="form-check">
+            <input (click)="getCreditCardId(creditCard.id)" class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

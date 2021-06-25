@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<section id="book" style="padding-top: 4rem;padding-bottom: 4rem;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <app-book-image [id]="bookId"></app-book-image>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body" style="height: 525px;overflow-y: auto;">
+                                <h5 class="card-title text-monospace">{{book?.bookName}}</h5>
+                                <h6  class="card-subtitle mb-2 text-muted text-monospace">{{book?.authorName}}</h6>
+                                <hr>
+                                <p class="card-text text-monospace">{{book?.description}}</p>
+                                <h5 class="card-text text-center text-monospace">Sayfa sayısı : {{book?.numberOfPages}}</h5>
+                                <h5 class="card-text text-center text-monospace">Kategori : {{book?.categoryName}}</h5>
+                                <h5 class="card-text text-center text-monospace ">Fiyatı : {{book?.unitPrice | currency: "TRY":"symbol-narrow":"1.2-2"}}</h5>
+                                <div *ngIf="book?.status==true" style="margin-bottom: .75rem;">
+                                    <button routerLink="/login" [queryParams]="{returnUrl:returnUrl+book.id}" *ngIf="isLoggedIn()==false" class="btn btn-outline-dark btn-block text-monospace" >Giriş Yap</button>
+                                    <button *ngIf="isLoggedIn()==true" (click)="addToCart(book)" class="btn btn-outline-dark btn-block text-monospace" >Sepete Ekle</button>
+                                </div>
+                                <div *ngIf="book?.status==false" style="margin-bottom: .75rem;">
+                                    <h3  class="text-center text-danger text-monospace">Bu ürün stokta yok.</h3>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <small class="text-muted text-monospace">{{book?.releaseDate}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>
